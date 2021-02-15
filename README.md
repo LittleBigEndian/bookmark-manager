@@ -3,11 +3,19 @@ This is a very basic project for managing bookmarks, powered by NgRx and Angular
 
 ## Features
 List of the use cases handled by this application:
-- view all bookmarks, grouped by their respective group
-- view all bookmarks, for a given group
-- edit a bookmark
-- create a bookmark
-- delete a bookmark
+
+### view all bookmarks, grouped by their respective group
+![Initial state](./src/assets/images/screenshots/initial-state.png)
+![Initial state - routing](./src/assets/images/screenshots/selected-group-bookmarks-routing.png)
+### view all bookmarks, for a given group
+![Group selected](./src/assets/images/screenshots/selected-group.png)
+![Group selected - routing](./src/assets/images/screenshots/selected-group-routing.png)
+### create a bookmark
+![Create bookmark](./src/assets/images/screenshots/create-bookmark.png)
+### edit a bookmark
+![Edit bookmark](./src/assets/images/screenshots/edit-bookmark.png)
+### delete a bookmark
+![Delete bookmark](./src/assets/images/screenshots/delete-bookmark-confirm.png)
 
 Every bookmark has the following properties:
 - name (optional)
