@@ -1,27 +1,64 @@
-# BookmarkManager
+# Bookmark Manager
+This is a very basic project for managing bookmarks, powered by NgRx and Angular Material. The design it's been inspired by the Google Bookmark Manager and the theme colors of [Avaloq](https://www.avaloq.com/en/home "Avaloq's Homepage")
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+## Features
+List of the use cases handled by this application:
+- view all bookmarks, grouped by their respective group
+- view all bookmarks, for a given group
+- edit a bookmark
+- create a bookmark
+- delete a bookmark
 
-## Development server
+Every bookmark has the following properties:
+- name (optional)
+- url
+- group
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Technical infos
+Design has been created using Angular Material at its best, with a sprinkle of flex layout for the base structure. There is no database whatsoever but the state management using NgRx.
 
-## Code scaffolding
+Highlights of what has been used in order to build this application:
+- dialogs
+- reactive forms
+- NgRx
+- NgRx-devtools
+- routing
+- Angular flex-layout
+- Angular Material theming
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## State management
+The state management has been achieved using NgRx.
 
-## Build
+The initial state is composed of dummy data.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### File structure
+- store
+    - bookmarks
+        - bookmark.model.ts
+        - bookmarks.actions.ts
+        - bookmarks.facade.ts
+        - bookmarks.reducers.ts
+        - bookmarks.state.ts
 
-## Running unit tests
+### State
+```typescript
+export class BookmarksState {
+  constructor(public bookmarks: Bookmark[]) {}
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Actions
+```typescript
+EDIT_BOOKMARK   = '[Bookmark] Edit bookmarks',
+CREATE_BOOKMARK = '[Bookmark] Create bookmarks',
+DELETE_BOOKMARK = '[Bookmark] Delete bookmark',
+```
 
-## Running end-to-end tests
+### Facade
+The facade handles most of the logic, decoupled from the presentation layer, with the use of selectors, connecting with the store and sending events (actions)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## How to run the application
+1. Run `npm install`
+2. Run `npm start`
+3. Navigate to `http://localhost:4202/`
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

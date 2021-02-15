@@ -1,0 +1,21 @@
+@import "../../../theme";
+
+.bm-groups {
+  mat-list {
+    position: relative;
+
+    & > mat-list {
+      margin-left: 1rem;
+      padding-top: 0;
+    }
+
+    mat-list-item {
+      cursor: pointer;
+      outline: none;
+
+      &.active {
+        color: $accent-color;
+      }
+    }
+  }
+}

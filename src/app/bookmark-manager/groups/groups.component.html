@@ -1,0 +1,20 @@
+<aside class="bm-groups">
+  <mat-card>
+    <mat-list>
+      <mat-list-item [routerLink]="['bookmarks']" routerLinkActive="active">
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <div mat-line>Bookmarks</div>
+      </mat-list-item>
+      <mat-list>
+        <mat-list-item
+          *ngFor="let group of groups$ | async"
+          [routerLink]="group"
+          routerLinkActive="active"
+        >
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <div mat-line>{{ group }}</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-list>
+  </mat-card>
+</aside>

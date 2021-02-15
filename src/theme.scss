@@ -1,0 +1,81 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$bm-primary-color: (
+  50: #e1e9f2,
+  100: #b4c7df,
+  200: #82a2ca,
+  300: #4f7cb4,
+  400: #2a60a4,
+  500: #044494,
+  600: #033e8c,
+  700: #033581,
+  800: #022d77,
+  900: #011f65,
+  A100: #95abff,
+  A200: #6283ff,
+  A400: #2f5bff,
+  A700: #1547ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$bm-accent-color: (
+  50: #e0f3fb,
+  100: #b3e0f4,
+  200: #80cbed,
+  300: #4db6e6,
+  400: #26a7e0,
+  500: #0097db,
+  600: #008fd7,
+  700: #0084d2,
+  800: #007acd,
+  900: #0069c4,
+  A100: #ecf5ff,
+  A200: #b9daff,
+  A400: #86bfff,
+  A700: #6db2ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$bm-theme-primary: mat-palette($bm-primary-color);
+$bm-theme-accent: mat-palette($bm-accent-color, 500, 900, A100);
+$bm-theme-warn: mat-palette($mat-deep-orange);
+
+$primary-color: mat-color($bm-theme-primary);
+$accent-color: mat-color($bm-theme-accent);
+$warn-color: mat-color($bm-theme-warn);
+$black-color: #34444c;
+
+$bm-theme: mat-light-theme($bm-theme-primary, $bm-theme-accent, $bm-theme-warn);
+
+@include angular-material-theme($bm-theme);

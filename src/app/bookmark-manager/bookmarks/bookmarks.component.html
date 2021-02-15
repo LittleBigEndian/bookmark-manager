@@ -1,0 +1,28 @@
+<section class="bm-bookmarks">
+  <mat-card>
+    <mat-list>
+      <ng-container *ngFor="let group of bookmarksByGroup$ | async | keyvalue">
+        <div mat-subheader>{{group.key}}</div>
+        
+        <mat-list-item *ngFor="let bookmark of group.value">
+          <div fxLayout="row" fxLayoutAlign="space-between center" class="bm-bookmark">
+            <mat-icon class="bm-bookmark-icon">bookmark_outline</mat-icon>
+            <div fxLayout="column" fxLayoutAlign="center start" fxFlex="flex-grow">
+              <span matLine>{{ bookmark.name }}</span>
+              <a [href]="bookmark.url" target="_blank" matLine>{{ bookmark.url }}</a>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end center">
+              <button mat-mini-fab color="accent" class="bm-edit-icon" (click)="editBookmark(bookmark)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn" (click)="deleteBookmark(bookmark)">
+                <mat-icon>delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </mat-card>
+</section>

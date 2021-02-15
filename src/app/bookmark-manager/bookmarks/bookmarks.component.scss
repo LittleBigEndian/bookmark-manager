@@ -1,0 +1,27 @@
+:host {
+  flex-grow: 1;
+  margin-left: 3rem;
+}
+
+.bm-bookmarks {
+  mat-list {
+    position: relative;
+
+    .bm-edit-icon {
+      margin-right: 0.5rem;
+    }
+
+    mat-list-item .bm-bookmark {
+      width: 100%;
+    }
+
+    mat-icon.bm-bookmark-icon {
+      margin-right: 1rem;
+    }
+  }
+
+  .mat-list-base .mat-list-item .mat-list-item-content,
+  .mat-list-base .mat-list-option .mat-list-item-content {
+    width: 100% !important;
+  }
+}
